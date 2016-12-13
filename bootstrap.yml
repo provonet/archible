@@ -1,0 +1,22 @@
+---
+
+- hosts: all
+
+  vars:
+    ansible_python_interpreter: /usr/bin/python2
+    hostname: myarchbox 
+    domain: mydomain.net 
+    root_password: secret 
+    locale:
+      region: Europe
+      city: Amsterdam
+
+  pre_tasks:
+  - name: clean roles directory
+    local_action: file path=roles state=absent
+
+  - name: run galaxy
+    local_action: command ansible-galaxy install -r requirements.yml --roles-path roles
+
+  roles:
+    - arch-bootstrap

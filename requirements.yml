@@ -1,0 +1,4 @@
+# fetch arch-bootstrap role from GitHub
+- name: arch-bootstrap
+  src: https://github.com/provonet/arch-bootstrap.git
+  version: v0.1.1
