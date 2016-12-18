@@ -10,6 +10,14 @@
       region: Europe
       city: Amsterdam
 
+  vars_prompt:
+    - name: "root_password"
+      prompt: "root password for the new installation"
+      private: yes
+      confirm: yes
+      encrypt: "sha512_crypt"
+      salt_size: 7
+
   pre_tasks:
   - name: run galaxy
     local_action: command ansible-galaxy install -r requirements.yml --roles-path roles --force
