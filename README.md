@@ -10,13 +10,12 @@ Example playbook utilizing the arch-bootstrap role
 Preparation
 ------------
 To install a new arch box do the following:
-1. boot the arch installation iso
-2. Perform the following actions in the console:
 
-- start sshd
-- set root password
-- install python2
-
+- boot the arch installation iso
+- Perform the following actions in the console:
+ - start sshd
+ - set root password
+ - install python2
 ```bash
 root@archiso ~ # systemctl start sshd
 root@archiso ~ # passwd 
@@ -48,7 +47,7 @@ Net Upgrade Size:       0.00 MiB
 :: Processing package changes...
 (1/1) upgrading python2                                                                       [######################################################] 100%
 ```
-3. check the ipaddress of the new box
+- check the ipaddress of the new box
 
 ```bash
 root@archiso ~ # ip a
