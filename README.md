@@ -5,14 +5,18 @@ Example arch-bootstrap playbook
 Example playbook utilizing the arch-bootstrap role 
 
 
+
+
 Preparation
 ------------
 To install a new arch box do the following:
-1.  boot the arch installation iso
-2.  Perform the following actions in the console:
+1. boot the arch installation iso
+2. Perform the following actions in the console:
+
 - start sshd
 - set root password
 - install python2
+
 ```bash
 root@archiso ~ # systemctl start sshd
 root@archiso ~ # passwd 
@@ -43,12 +47,12 @@ Net Upgrade Size:       0.00 MiB
 (1/1) checking available disk space                                                           [######################################################] 100%
 :: Processing package changes...
 (1/1) upgrading python2                                                                       [######################################################] 100%
-
 ```
 3. check the ipaddress of the new box
+
 ```bash
 root@archiso ~ # ip a
-: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
+1: lo: <LOOPBACK,UP,LOWER_UP> mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1
     link/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00
     inet 127.0.0.1/8 scope host lo
        valid_lft forever preferred_lft forever
@@ -62,8 +66,8 @@ root@archiso ~ # ip a
        valid_lft 3993sec preferred_lft 3301sec
     inet6 fe80::4816:71c6:8719:9a20/64 scope link 
        valid_lft forever preferred_lft forever
-
 ```
+
 
 Run the playbook
 ------------
@@ -75,6 +79,7 @@ ansible-playbook -i 1.2.3.4, bootstrap.yml -ku root
 - During the playbook run you will be prompted for the root password of the new installation
 
 - After the run  is finished you can reboot the new installation and the installation will and log in with the given root password.
+
 
 Author Information
 ------------------
