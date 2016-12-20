@@ -77,7 +77,7 @@ ansible-playbook -i 1.2.3.4, bootstrap.yml -ku root
 
 - During the playbook run you will be prompted for the root password of the new installation
 
-- After the run  is finished you can reboot the new installation and the installation will and log in with the given root password.
+- After the run  is finished you can reboot the new installation and log in with the given root password.
 
 
 Author Information
