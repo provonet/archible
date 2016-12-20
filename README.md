@@ -70,10 +70,11 @@ Run the playbook
 ```bash
 ansible-playbook -i 1.2.3.4, bootstrap.yml -ku root
 ```
-1. enter the root password to connect to the iso boot
+- enter the root password to connect to the iso boot
 
-During the playbook run you will be prompted for the root password of the new installation
-After the run  is finished you can reboot the new installation and the installation will and log in with the given root password.
+- During the playbook run you will be prompted for the root password of the new installation
+
+- After the run  is finished you can reboot the new installation and the installation will and log in with the given root password.
 
 Author Information
 ------------------
