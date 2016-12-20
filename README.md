@@ -68,7 +68,7 @@ root@archiso ~ # ip a
 Run the playbook
 ------------
 ```bash
-ansible-playbook -i 172.31.255.110, bootstrap.yml -ku root
+ansible-playbook -i 1.2.3.4, bootstrap.yml -ku root
 ```
 1. enter the root password to connect to the iso boot
 
