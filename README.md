@@ -46,6 +46,7 @@ Net Upgrade Size:       0.00 MiB
 (1/1) checking available disk space                                                           [######################################################] 100%
 :: Processing package changes...
 (1/1) upgrading python2                                                                       [######################################################] 100%
+root@archiso ~ #
 ```
 - check the ipaddress of the new box
 
@@ -59,7 +60,7 @@ root@archiso ~ # ip a
        valid_lft forever preferred_lft forever
 2: enp0s3: <BROADCAST,MULTICAST,UP,LOWER_UP> mtu 1500 qdisc fq_codel state UP group default qlen 1000
     link/ether 08:00:27:72:01:c4 brd ff:ff:ff:ff:ff:ff
-    inet 1.2.3.4/24 brd 1.2.3.4 scope global enp0s3
+    inet 1.2.3.4/24 brd 1.2.3.255 scope global enp0s3
        valid_lft forever preferred_lft forever
     inet6 1234:567:89a:1:1245:6789:0abc:def/64 scope global mngtmpaddr noprefixroute dynamic 
        valid_lft 3993sec preferred_lft 3301sec
@@ -78,6 +79,7 @@ ansible-playbook -i 1.2.3.4, bootstrap.yml -ku root
 - During the playbook run you will be prompted for the root password of the new installation
 
 - After the run  is finished you can reboot the new installation and log in with the given root password.
+
 
 
 Author Information
