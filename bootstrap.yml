@@ -3,12 +3,17 @@
 
   vars:
     ansible_python_interpreter: /usr/bin/python2
-    hostname: myarchbox
+    hostname: archible
     domain: mydomain.net
     root_password: secret
-    locale:
+    timezone:
       region: Europe
       city: Amsterdam
+      languages:
+        default:
+          locale: nl_NL.UTF-8
+        ui:
+          locale: en_US.UTF-8
 
   vars_prompt:
     - name: "root_password"
@@ -19,14 +24,12 @@
       salt_size: 7
 
   pre_tasks:
-  - name: run galaxy
-    local_action: command ansible-galaxy install -r requirements.yml --roles-path roles --force
-    register: fetch_roles
+    - name: run galaxy
+      local_action: command ansible-galaxy install -r requirements.yml --roles-path roles --force
+      register: fetch_roles
 
   tasks:
-    - include_role:
-        name: arch-bootstrap
-        static: no
-      ignore_errors: True
-      when:
-        - fetch_roles.changed
+    - name: include roles
+      include_role:
+          name: arch-bootstrap
+          static: no
