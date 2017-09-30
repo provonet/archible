@@ -23,13 +23,12 @@
       encrypt: "sha512_crypt"
       salt_size: 7
 
-  pre_tasks:
-    - name: run galaxy
-      local_action: command ansible-galaxy install -r requirements.yml --roles-path roles --force
-      register: fetch_roles
+  # pre_tasks:
+  #   - name: run galaxy
+  #     local_action: command ansible-galaxy install -r requirements.yml --roles-path roles --force
+  #     register: fetch_roles
 
   tasks:
     - name: include roles
       include_role:
-          name: arch-bootstrap
-      when: fetch_roles.changed
+        name: arch-bootstrap
