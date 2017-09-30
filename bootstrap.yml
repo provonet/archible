@@ -32,5 +32,4 @@
     - name: include roles
       include_role:
           name: arch-bootstrap
-          static: no
       when: fetch_roles.changed
